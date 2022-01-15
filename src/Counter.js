@@ -4,21 +4,6 @@ import {connect} from 'react-redux';
 import {increment, decrement, reset} from './redux/actions/counter';
 
 class Counter extends Component {
-  state = {
-    count: 0,
-  };
-
-  increment = () => {
-    this.setState({
-      count: this.state.count + 1,
-    });
-  };
-
-  decrement = () => {
-    this.setState({
-      count: this.state.count - 1,
-    });
-  };
 
   render() {
     return (
@@ -64,7 +49,7 @@ class Counter extends Component {
 const mapStateToProps = state => ({count: state.count});
 
 const mapDispatchToProps = dispatch => ({
-  increment: ({ payload }) => dispatch(increment(payload)),
+  increment: ({payload}) => dispatch(increment(payload)),
   decrement: ({payload}) => dispatch(decrement(payload)),
   //   increment5: () => dispatch({type: 'INCREMENT', payload: 5}),
   //   decrement5: () => dispatch({type: 'DECREMENT', payload: 5}),
